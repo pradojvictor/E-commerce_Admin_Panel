@@ -51,6 +51,7 @@ export default function Categories() {
                 <thead>
                     <tr>
                         <td>Category name</td>
+                        <td>Parent category</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +59,7 @@ export default function Categories() {
                         // eslint-disable-next-line react/jsx-key
                         <tr>
                             <td>{category.name}</td>
+                            <td>{category?.parent?.name}</td>
                         </tr>
                     ))}
                 </tbody>
