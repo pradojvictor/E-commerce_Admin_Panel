@@ -33,7 +33,7 @@ export default function ProductForm({
 
     async function saveProduct(ev) {
         ev.preventDefault();
-        const data = { title, description, price, images, category, properties:productProperties };
+        const data = { title, description, price, images, category, properties: productProperties };
         if (_id) {
             //update
             await axios.put('/api/products', { ...data, _id });
@@ -160,6 +160,10 @@ export default function ProductForm({
                 value={price}
                 onChange={ev => setPrice(ev.target.value)}
             />
+            <button
+                className="btn-default mr-1"
+                onClick={() => setGoToProducts(true)}
+            >Cancel</button>
             <button type="submit" className="btn-primary">Save</button>
         </form>
     );
