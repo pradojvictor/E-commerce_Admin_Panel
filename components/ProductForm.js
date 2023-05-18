@@ -104,27 +104,30 @@ export default function ProductForm({
                 ))}
             </select>
             {propertiesToFill.length > 0 && propertiesToFill.map(p => (
-                <div className="flex gap-1">
-                    <div>{p.name}</div>
-                    <select
-                        value={productProperties[p.name]}
-                        onChange={ev => setProductProp(p.name, ev.target.value)}
-                    >
-                        {p.values.map(v => (
-                            <option value={v}>{v}</option>
-                        ))}
-                    </select>
+                <div className="mx-[10%] w-3/4">
+                    <label>{p.name[0].toUpperCase()+p.name.substring(1)}</label>
+                    <div>
+                        <select
+                            value={productProperties[p.name]}
+                            onChange={ev => setProductProp(p.name, ev.target.value)}
+                        >
+                            {p.values.map(v => (
+                                <option value={v}>{v}</option>
+                            ))}
+                        </select>
+                    </div>
+
                 </div>
             ))}
             <label>Photos</label>
-            <div className="mb-2 flex flex-wrap gap-2 ">
+            <div className="mb-2 flex flex-wrap gap-2">
                 <ReactSortable
                     list={images}
                     setList={updateImagesOrder}
                     className="flex flex-wrap gap-2"
                 >
                     {!!images?.length && images.map(link => (
-                        <div key={link} className="h-24">
+                        <div key={link} className="max-sm:h-20 max-sm:mx-auto h-24 border-gray-300 border rounded-md shadow-sm">
                             <img src={link} alt="product image" className="rounded-lg" />
                         </div>
                     ))}
@@ -134,7 +137,7 @@ export default function ProductForm({
                         <Spinner />
                     </div>
                 )}
-                <label className="w-24 h-24 cursor-pointer text-center flex items-center justify-center text-sm gap-1 text-gray-500 rounded-lg bg-gray-300">
+                <label className="max-sm:w-full max-sm:m-1  w-24 h-24 cursor-pointer text-center flex items-center justify-center text-sm gap-1 text-gray-500 rounded-lg bg-gray-300 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                     </svg>
@@ -164,3 +167,5 @@ export default function ProductForm({
         </form>
     );
 }
+
+//6:23:31

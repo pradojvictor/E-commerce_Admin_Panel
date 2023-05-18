@@ -59,7 +59,7 @@ function Categories({ swal }) {
             showCancelButton: true,
             cancelButtonText: 'Cancel',
             confirmButtonText: 'Yes, Delete!',
-            confirmButtonColor: '#d55',
+            confirmButtonColor: '#ee7958',
             reverseButtons: true,
         }).then(async result => {
             if (result.isConfirmed) {
@@ -143,7 +143,7 @@ function Categories({ swal }) {
                             />
                             <button
                                 type="button"
-                                className="btn-default"
+                                className="btn-red"
                                 onClick={() => removeProperty(index)}>
                                 Remove
                             </button>
@@ -182,10 +182,10 @@ function Categories({ swal }) {
                                 <td>
                                     <button
                                         onClick={() => editCategory(category)}
-                                        className="btn-primary mr-1">Edit</button>
+                                        className="btn-secondary mr-1">Edit</button>
                                     <button
                                         onClick={() => deleteCategory(category)}
-                                        className="btn-primary">Delete</button>
+                                        className="btn-red">Delete</button>
                                 </td>
                             </tr>
                         ))}
