@@ -23,7 +23,8 @@ label{
 table.basic{
     @apply w-full rounded-sm shadow-md;
 }
-table.basic thead tr td{
+table.basic thead tr td,
+table.basic thead tr th{
     @apply bg-gray-400 uppercase border-b-4 border-gray-200 px-4 py-2;
 }
 table.basic tr td{
