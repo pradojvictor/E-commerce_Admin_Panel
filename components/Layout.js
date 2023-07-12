@@ -40,5 +40,3 @@ export default function Layout({ children }) {
 
     );
 }
-
-//6:03
